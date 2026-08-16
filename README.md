@@ -6,9 +6,9 @@ Browser extension that overlays FINRA BrokerCheck disclosure data on [LetsMakeAP
 
 When you visit a CFP® professional's profile on LetsMakeAPlan.org, this extension automatically:
 
-1. Reads the planner's name from the page
-2. Queries FINRA's public BrokerCheck API
-3. Displays a badge showing whether disclosures (complaints, regulatory actions, criminal charges) exist
+1. Extracts the CRD number from the page's existing BrokerCheck link (deterministic — no fuzzy name matching)
+2. Queries FINRA's public BrokerCheck API for disclosure details
+3. Displays a prominent badge showing disclosure count
 4. Links directly to the full BrokerCheck report
 
 ## Why
@@ -32,7 +32,8 @@ TBD — will be published on [Chrome Web Store](https://chromewebstore.google.co
 
 - **Manifest V3** — single codebase targeting both Chrome and Firefox
 - **Content script** — fires on `letsmakeaplan.org/find-a-cfp-professional/certified-professional-profile/*`
-- **No backend** — queries BrokerCheck's public search API directly
+- **CRD-based matching** — extracts the CRD number from the page's own BrokerCheck link (no name guessing)
+- **No backend** — queries BrokerCheck's public detail API directly
 - **No data storage** — all lookups are real-time, nothing cached
 
 ## Legal basis
