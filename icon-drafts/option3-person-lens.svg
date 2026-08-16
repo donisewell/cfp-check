@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Option 3: Monocle/lens over a person — "looking closer at who they are" -->
+  <!-- Background -->
+  <circle cx="64" cy="64" r="60" fill="#00B5EA"/>
+  
+  <!-- Person silhouette (simple) -->
+  <circle cx="52" cy="48" r="14" fill="#ffffff" opacity="0.9"/>
+  <path d="M30 96 C30 74 74 74 74 96" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Lens overlay (right side) -->
+  <circle cx="82" cy="58" r="26" fill="none" stroke="#333333" stroke-width="5"/>
+  <circle cx="82" cy="58" r="26" fill="#ffffff" opacity="0.15"/>
+  <line x1="100" y1="76" x2="114" y2="90" stroke="#333333" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Data lines visible through lens -->
+  <line x1="70" y1="50" x2="94" y2="50" stroke="#333333" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="57" x2="90" y2="57" stroke="#333333" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="64" x2="87" y2="64" stroke="#FFCC33" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

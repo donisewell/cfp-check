@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "CFP Check",
+  "name": "Planner Lens",
   "version": "0.1.0",
-  "description": "See FINRA BrokerCheck disclosures on LetsMakeAPlan.org CFP profiles",
+  "description": "See FINRA BrokerCheck disclosures while browsing LetsMakeAPlan.org planner profiles",
   "permissions": [],
   "host_permissions": [
     "https://api.brokercheck.finra.org/*"
