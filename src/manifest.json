@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "CFP Check",
+  "version": "0.1.0",
+  "description": "See FINRA BrokerCheck disclosures on LetsMakeAPlan.org CFP profiles",
+  "permissions": [],
+  "host_permissions": [
+    "https://api.brokercheck.finra.org/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.letsmakeaplan.org/find-a-cfp-professional/certified-professional-profile/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
