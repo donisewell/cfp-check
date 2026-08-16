@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Planner Lens",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "See FINRA BrokerCheck disclosures while browsing LetsMakeAPlan.org planner profiles",
   "permissions": [],
   "host_permissions": [
@@ -18,7 +18,16 @@
     }
   ],
   "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
     "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
     "128": "icons/icon-128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "planner-lens@filehouse.org",
+      "strict_min_version": "109.0"
+    }
   }
 }
