@@ -94,12 +94,22 @@
         });
       }
 
+      const bcScope = content.basicInformation?.bcScope || content.bcScope || '';
+      const iaScope = content.basicInformation?.iaScope || content.iaScope || '';
+      const isIaOnly = bcScope === 'NotInScope' && iaScope === 'Active';
+
+      const reportUrl = isIaOnly
+        ? `https://adviserinfo.sec.gov/individual/summary/${crdNumber}`
+        : `https://brokercheck.finra.org/individual/summary/${crdNumber}`;
+
       return {
         hasDisclosures: content.disclosureFlag === 'Y',
         disclosureCount: disclosures.length,
         byType,
         crdNumber,
-        brokerCheckUrl: `https://brokercheck.finra.org/individual/summary/${crdNumber}`
+        isIaOnly,
+        reportUrl,
+        brokerCheckUrl: reportUrl
       };
     } catch (err) {
       console.error('[Planner Lens] API error:', err);
@@ -194,7 +204,10 @@
     // Footer
     const footer = el('div', { className: 'planner-lens-footer' });
 
-    footer.appendChild(link(apiResult.brokerCheckUrl, 'View full BrokerCheck report →'));
+    const reportLabel = apiResult.isIaOnly
+      ? 'View full SEC IAPD report →'
+      : 'View full BrokerCheck report →';
+    footer.appendChild(link(apiResult.reportUrl, reportLabel));
 
     const pageLink = el('a', {
       href: disclosuresAnchor,
@@ -203,9 +216,13 @@
     });
     footer.appendChild(pageLink);
 
+    const sourceLabel = apiResult.isIaOnly ? 'SEC IAPD' : 'FINRA BrokerCheck';
+    const sourceUrl = apiResult.isIaOnly
+      ? 'https://adviserinfo.sec.gov/'
+      : 'https://brokercheck.finra.org/';
     const meta = el('span', { className: 'planner-lens-meta' },
       document.createTextNode('All data from '),
-      link('https://brokercheck.finra.org/', 'FINRA BrokerCheck'),
+      link(sourceUrl, sourceLabel),
       document.createTextNode(` · CRD# ${apiResult.crdNumber} · `),
       link('https://brokercheck.finra.org/terms', 'Terms')
     );

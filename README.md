@@ -23,6 +23,15 @@ TBD (will be published on [Firefox Add-ons](https://addons.mozilla.org/))
 ### Chrome
 TBD (will be published on [Chrome Web Store](https://chromewebstore.google.com/))
 
+### Userscript (Greasemonkey / Tampermonkey)
+If you already run a userscript manager, you can skip the extension entirely:
+
+1. Install [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://www.greasespot.net/)
+2. Open [`userscript/planner-lens.user.js`](userscript/planner-lens.user.js) on GitHub and click "Raw"
+3. Your userscript manager will prompt you to install it
+
+Same functionality, same visual output, no store required.
+
 ### From source (development)
 1. Clone this repo
 2. **Firefox:** Open `about:debugging` > "This Firefox" > "Load Temporary Add-on" > select `src/manifest.json`
