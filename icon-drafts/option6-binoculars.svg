@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Option 6: Stylized binoculars — "dual lens view" (FINRA + SEC) -->
+  <!-- Background -->
+  <rect width="128" height="128" rx="24" fill="#FFCC33"/>
+  
+  <!-- Left lens -->
+  <circle cx="46" cy="68" r="26" fill="#333333"/>
+  <circle cx="46" cy="68" r="22" fill="none" stroke="#ffffff" stroke-width="3"/>
+  
+  <!-- Right lens -->
+  <circle cx="82" cy="68" r="26" fill="#333333"/>
+  <circle cx="82" cy="68" r="22" fill="none" stroke="#ffffff" stroke-width="3"/>
+  
+  <!-- Bridge -->
+  <rect x="56" y="60" width="16" height="8" rx="4" fill="#333333"/>
+  
+  <!-- Left lens content: checkmark -->
+  <polyline points="36,68 44,76 58,60" fill="none" stroke="#8FFFB0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Right lens content: warning -->
+  <line x1="82" y1="58" x2="82" y2="72" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="82" cy="78" r="2.5" fill="#FF6B6B"/>
+  
+  <!-- Top label -->
+  <text x="64" y="30" font-family="Arial" font-weight="bold" font-size="14" fill="#333333" text-anchor="middle">PLANNER</text>
+  <text x="64" y="112" font-family="Arial" font-weight="bold" font-size="14" fill="#333333" text-anchor="middle">LENS</text>
+</svg>

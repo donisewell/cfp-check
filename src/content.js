@@ -1,13 +1,13 @@
 /**
- * CFP Check — Content Script (v1)
+ * Planner Lens — Content Script (v1)
  *
  * Fires on LetsMakeAPlan.org CFP profile pages.
  * Extracts the CRD number from the page's own BrokerCheck link,
  * queries FINRA BrokerCheck to check for disclosures,
- * and injects a short alert with a link to the full report.
+ * and injects a disclosure badge near the planner's name.
  */
 
-(async function cfpCheck() {
+(async function plannerLens() {
   'use strict';
 
   // --- Config ---
@@ -67,7 +67,7 @@
         brokerCheckUrl: `https://brokercheck.finra.org/individual/summary/${crdNumber}`
       };
     } catch (err) {
-      console.error('[CFP Check] API error:', err);
+      console.error('[Planner Lens] API error:', err);
       return null;
     }
   }
@@ -121,11 +121,11 @@
 
   const crdNumber = extractCrdNumber();
   if (!crdNumber) {
-    console.log('[CFP Check] No BrokerCheck link found on page — skipping.');
+    console.log('[Planner Lens] No BrokerCheck link found on page — skipping.');
     return;
   }
 
-  console.log(`[CFP Check] Checking CRD# ${crdNumber}`);
+  console.log(`[Planner Lens] Checking CRD# ${crdNumber}`);
 
   // Loading indicator
   const heading = document.querySelector('h1');
