@@ -63,6 +63,7 @@
       return {
         hasDisclosures: content.disclosureFlag === 'Y',
         disclosureCount: disclosures.length,
+        crdNumber,
         brokerCheckUrl: `https://brokercheck.finra.org/individual/summary/${crdNumber}`
       };
     } catch (err) {
@@ -89,20 +90,21 @@
       badge.className = 'cfp-check-badge cfp-check-warning';
       badge.innerHTML = `
         <span class="cfp-check-icon">⚠️</span>
-        <span class="cfp-check-text">
-          <strong>${result.disclosureCount} disclosure${result.disclosureCount !== 1 ? 's' : ''}</strong> found on FINRA BrokerCheck
-          — <a href="${result.brokerCheckUrl}" target="_blank" rel="noopener">View full report →</a>
-        </span>
-        <span class="cfp-check-source">Source: <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a> · <a href="https://brokercheck.finra.org/terms" target="_blank" rel="noopener">Terms</a></span>
+        <div class="cfp-check-content">
+          <div class="cfp-check-headline">${result.disclosureCount} disclosure${result.disclosureCount !== 1 ? 's' : ''} found</div>
+          <div class="cfp-check-detail"><a href="${result.brokerCheckUrl}" target="_blank" rel="noopener">View full BrokerCheck report →</a></div>
+          <div class="cfp-check-meta">Source: <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a> · CRD# ${result.crdNumber} · <a href="https://brokercheck.finra.org/terms" target="_blank" rel="noopener">Terms of Use</a></div>
+        </div>
       `;
     } else {
       badge.className = 'cfp-check-badge cfp-check-clean';
       badge.innerHTML = `
         <span class="cfp-check-icon">✅</span>
-        <span class="cfp-check-text">
-          No disclosures on <a href="${result.brokerCheckUrl}" target="_blank" rel="noopener">FINRA BrokerCheck</a>
-        </span>
-        <span class="cfp-check-source">Source: <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a> · <a href="https://brokercheck.finra.org/terms" target="_blank" rel="noopener">Terms</a></span>
+        <div class="cfp-check-content">
+          <div class="cfp-check-headline">No disclosures found</div>
+          <div class="cfp-check-detail"><a href="${result.brokerCheckUrl}" target="_blank" rel="noopener">View BrokerCheck profile</a></div>
+          <div class="cfp-check-meta">Source: <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">FINRA BrokerCheck</a> · CRD# ${result.crdNumber} · <a href="https://brokercheck.finra.org/terms" target="_blank" rel="noopener">Terms of Use</a></div>
+        </div>
       `;
     }
 
