@@ -1,109 +1,129 @@
 /* Planner Lens — Badge styles
-   Dark contrast panel with full BrokerCheck attribution */
+   Dark contrast panel with Roth-style disclosure summary table */
 
-.cfp-check-badge {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+.planner-lens-badge {
   margin: 12px 0;
-  padding: 14px 18px;
+  padding: 16px 20px;
   border-radius: 6px;
   font-family: "HCo Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   font-size: 13px;
   line-height: 1.5;
 }
 
-/* Warning state — dark panel */
-.cfp-check-warning {
+/* Warning state */
+.planner-lens-warning {
   background: #333333;
   color: #ffffff;
 }
 
-.cfp-check-warning .cfp-check-headline {
-  font-weight: 700;
-  font-size: 14px;
-  color: #FFCC33;
-}
-
-/* Clean state — dark green */
-.cfp-check-clean {
+/* Clean state */
+.planner-lens-clean {
   background: #1a5632;
   color: #ffffff;
 }
 
-.cfp-check-clean .cfp-check-headline {
-  font-weight: 700;
-  font-size: 14px;
-  color: #8FFFB0;
-}
-
-/* Not found state */
-.cfp-check-not-found {
-  background: #4E4E4E;
-  color: #cccccc;
-}
-
-.cfp-check-not-found .cfp-check-headline {
-  font-weight: 700;
-  font-size: 14px;
-  color: #cccccc;
-}
-
 /* Loading state */
-.cfp-check-loading {
+.planner-lens-loading {
   background: #4E4E4E;
   color: #cccccc;
-  animation: cfp-check-pulse 1.5s ease-in-out infinite;
+  padding: 12px 20px;
+  animation: planner-lens-pulse 1.5s ease-in-out infinite;
 }
 
-@keyframes cfp-check-pulse {
+@keyframes planner-lens-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
 
-/* Layout elements */
-.cfp-check-icon {
-  font-size: 20px;
-  flex-shrink: 0;
-  margin-top: 1px;
+/* Header */
+.planner-lens-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
-.cfp-check-content {
-  flex: 1;
-  min-width: 0;
+.planner-lens-icon {
+  font-size: 18px;
 }
 
-.cfp-check-headline {
-  margin: 0;
+.planner-lens-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
 }
 
-.cfp-check-detail {
+/* Table */
+.planner-lens-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+
+.planner-lens-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.planner-lens-table tr:last-child {
+  border-bottom: none;
+}
+
+.planner-lens-label {
+  padding: 6px 0;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.85);
-  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.7);
+  vertical-align: top;
+  width: 45%;
 }
 
-.cfp-check-detail a {
+.planner-lens-value {
+  padding: 6px 0;
+  font-size: 12px;
+  font-weight: 600;
+  vertical-align: top;
+}
+
+.planner-lens-value.planner-lens-none {
+  color: #8FFFB0;
+}
+
+.planner-lens-value.planner-lens-flagged {
+  color: #FFCC33;
+}
+
+/* Footer */
+.planner-lens-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.planner-lens-footer a {
   color: #00B5EA;
   text-decoration: none;
   font-weight: 500;
+  font-size: 12px;
 }
 
-.cfp-check-detail a:hover {
+.planner-lens-footer a:hover {
   text-decoration: underline;
 }
 
-.cfp-check-meta {
+.planner-lens-meta {
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-left: auto;
 }
 
-.cfp-check-meta a {
-  color: rgba(255, 255, 255, 0.5);
+.planner-lens-meta a {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-weight: 400 !important;
   text-decoration: underline;
 }
 
-.cfp-check-meta a:hover {
-  color: rgba(255, 255, 255, 0.7);
+.planner-lens-meta a:hover {
+  color: rgba(255, 255, 255, 0.6) !important;
 }
