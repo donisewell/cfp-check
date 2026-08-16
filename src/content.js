@@ -76,7 +76,6 @@
 
       return {
         hasDisclosures: content.disclosureFlag === 'Y',
-        hasIaDisclosures: content.iaDisclosureFlag === 'Y',
         disclosureCount: disclosures.length,
         byType,
         crdNumber,
@@ -152,14 +151,6 @@
         <td class="planner-lens-value planner-lens-none">None</td>
       </tr>`;
     }
-
-    // SEC/IA Disclosures
-    const secValue = apiResult.hasIaDisclosures ? 'Yes' : 'None';
-    const secClass = apiResult.hasIaDisclosures ? 'flagged' : 'none';
-    rows += `<tr>
-      <td class="planner-lens-label">SEC Investment Adviser Disclosures</td>
-      <td class="planner-lens-value planner-lens-${secClass}">${secValue}</td>
-    </tr>`;
 
     badge.innerHTML = `
       <div class="planner-lens-header">
