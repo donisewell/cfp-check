@@ -2,6 +2,8 @@
 
 A browser extension that surfaces FINRA BrokerCheck disclosure data while you browse financial planner profiles on LetsMakeAPlan.org.
 
+![Planner Lens in action](store-assets/screenshot.png)
+
 ## What it does
 
 When you visit a CFP® professional's profile on LetsMakeAPlan.org, Planner Lens:
