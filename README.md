@@ -20,10 +20,10 @@ LetsMakeAPlan.org buries disclosure information at the bottom of each profile. T
 ## Install
 
 ### Firefox
-TBD (will be published on [Firefox Add-ons](https://addons.mozilla.org/))
+[Install from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/planner-lens/)
 
 ### Chrome
-TBD (will be published on [Chrome Web Store](https://chromewebstore.google.com/))
+Pending approval on [Chrome Web Store](https://chromewebstore.google.com/)
 
 ### Userscript (Greasemonkey / Tampermonkey)
 If you already run a userscript manager, you can skip the extension entirely:
